@@ -31,6 +31,7 @@ class Importer {
 			$this::INT_STATE_AUTHOR => array('name' => 'dc:creator', 'output_key' => 'author'),
 			$this::INT_STATE_CONTENT => array('name' => 'content', 'output_key' => 'content'),
 			$this::INT_STATE_DATE => array('name' => 'pubDate', 'output_key' => 'datestamp')
+			$this::INT_STATE_AUTHOR_ID => array('name' => 'author_id', 'output_key' => 'author_id')
 		);
 		$blnInCdata = false;
 		$strCurrentStringData = '';
@@ -107,6 +108,7 @@ class Importer {
 			$arrArticles[$intKey]['Article']['author'] = $this->_convertToUtf8($arrArticle['Article']['author']);
 			$arrArticles[$intKey]['Article']['source_url'] = $this->_convertToUtf8($arrArticle['Article']['source_url']);
 			$arrArticles[$intKey]['Article']['datestamp'] = strtotime($arrArticle['Article']['datestamp']);
+			$arrArticles[$intKey]['Article']['author_id'] = 1;
 		}
 
 		return $arrArticles;	

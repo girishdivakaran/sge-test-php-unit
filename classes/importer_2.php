@@ -26,7 +26,8 @@ class Importer {
 				"source_url"    => $objFeedItem->get_permalink(),
 				"content"		=> $objFeedItem->get_content(),
 				"datestamp"		=> strtotime($objFeedItem->get_date("Y-m-d H:i:s")),
-				"author"		=> $objFeedItem->get_author()
+				"author"		=> $objFeedItem->get_author(),
+				"author_id"		=> 1
 			);
 
 			$arrArticles[] = array(

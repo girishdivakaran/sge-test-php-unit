@@ -25,7 +25,8 @@ class Importer {
 				"source_url"    => $this->_convertToUtf8($objFeedItem->get_permalink()),
 				"content"		=> $this->_convertToUtf8(strip_tags($objFeedItem->get_content())),
 				"datestamp"		=> strtotime($objFeedItem->get_date("Y-m-d H:i:s")),
-				"author"		=> $this->_convertToUtf8($objFeedItem->get_author()->get_name())
+				"author"		=> $this->_convertToUtf8($objFeedItem->get_author()->get_name()),
+				"author_id"		=> 1
 			);
 
 			$arrArticles[] = array(

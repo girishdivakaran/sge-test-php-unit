@@ -45,18 +45,21 @@ class ImporterTest extends PHPUnit_Framework_TestCase {
 			$this->assertArrayHasKey("source_url", $arrArticle['Article']);
 			$this->assertArrayHasKey("title", $arrArticle['Article']);
 			$this->assertArrayHasKey("content", $arrArticle['Article']);
+			$this->assertArrayHasKey("author_id", $arrArticle['Article']);
 			
 			$this->assertNotEmpty($arrArticle['Article']['author']);
 			$this->assertNotEmpty($arrArticle['Article']['title']);
 			$this->assertNotEmpty($arrArticle['Article']['source_url']);
 			$this->assertNotEmpty($arrArticle['Article']['content']);
 			$this->assertNotEmpty($arrArticle['Article']['datestamp']);
+			$this->assertNotEmpty($arrArticle['Article']['author_id']);
 						
 			$this->assertTrue(is_string($arrArticle['Article']['author']));
 			$this->assertTrue(is_string($arrArticle['Article']['title']));
 			$this->assertTrue(is_string($arrArticle['Article']['source_url']));
 			$this->assertTrue(is_string($arrArticle['Article']['content']));
 			$this->assertTrue(is_numeric($arrArticle['Article']['datestamp']));
+			$this->assertTrue(is_numeric($arrArticle['Article']['author_id']));
 		}
 	}
 	
